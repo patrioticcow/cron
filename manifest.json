@@ -1,0 +1,12 @@
+{
+  "manifest_version": 2,
+
+  "name": "Cron job generator",
+  "author": "Cristi Citea cristi.catea@gmail.com",
+  "description": "Cron job generator",
+  "version": "1.0",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "index.html"
+  }
+}
