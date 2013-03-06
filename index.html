@@ -10,32 +10,44 @@
     <script type="text/javascript" src="js/script.js"></script>
     <style> 
         h1{margin: 0 0 15px 0;padding: 0;font-family: arial;font-size: 24px;}
-        .container { margin: 10px; padding: 10px; width:600px;}
+        .container { margin: 10px; padding: 10px; width:700px;}
         .container_val { font-family: monospace; }
-        p span {color: red}
+        .red {color: red}
         input {background-color: #eee;border: 2px solid #ddd;padding: 3px 5px 3px 0;border-radius: 5px;width:100%}
         .extra {font-size: 12px;color: gray;}
     </style>
 </head>
 <body>
     <div class='container'>
-        <h1>Cron job generator</h1>
+        <h1>Cron job generator 1.0</h1>
         <div id='container_cron'></div>
         <br>
-        <label for="user">Enter the privileged user (<code>root</code>)</label>
-        <input type="text" id="user" placeholder="Enter the privileged user">
-        <br>
-        <label for="inp">Enter the path and file name of the script (<code>/var/scripts/script_to_run.php</code>)</label>
+        <label for="email">Send output to particular email (<code>test@test.com</code>)</label>
+        <input type="text" id="email" placeholder="Enter email">
+        <br><br>
+        <label for="user"><span class="red">*</span> Enter username (<code>root</code>)</label>
+        <input type="text" id="user" placeholder="Enter username">
+        <br><br>
+        <label for="inp"><span class="red">*</span> Enter the path and file name of the script (<code>/var/scripts/script_to_run.php</code>)</label>
         <input type="text" id="inp" placeholder="Script file path and name">
-        <br>
-        <label for="log">Enter the path and file name of the log file (<code>/var/log/cron</code>)</label>
+        <br><br>
+        <label for="log"><span class="red">*</span> Enter the path and file name of the log file (<code>/var/log/cron/log_to_dave.log</code>)</label>
         <input type="text" id="log" placeholder="Log file path and name">
+        <br><br>
+        <label for="repeat">Log Type</label>
+        <select id="repeat">
+            <option value=">">Overwrite log on each run</option>
+            <option value=">>">Add (concatenate) to log</option>
+        </select>
+        <hr>
         <p>Generated cron entry: 
-            <span class='container_cron' id='val'></span>
-            <span class='container_user'></span>
-            <span class='container_path'></span>
-            <span class='container_log'></span>
+            <p class='container_email red'></p>
+            <span class='container_cron red' id='val'></span>
+            <span class='container_user red'></span>
+            <span class='container_path red'></span>
+            <span class='container_log red'></span>
         </p>
+        <p>NOTE: complete in all starred fields for the cronjob to run</p>
         <div class="extra">The jquery-cron plugin -  Copyright © 2010 
             <a href="http://github.com/shawnchin" target="_blank">Shawn Chin </a>
             (Licensed under the 
