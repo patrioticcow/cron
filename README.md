@@ -1,7 +1,7 @@
 Cron job generator Chrome App
 =================================
 
-https://chrome.google.com/webstore/detail/keyboard/lmkdlclficoecjnoooplalmbofnmpckp
+https://chrome.google.com/webstore/detail/cron-job-generator/ialilpegnnfigbcggpbbdecdgencbfge
 
 Copyright (c) 2014 Cristi Citea
 
